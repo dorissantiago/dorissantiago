@@ -1,0 +1,17 @@
+#after collecting data in pclamp and clampfit, the data can be generated in a standard .abf format. Here is a code to open a .abf file in python with a windows system
+
+#STEP1 :  INSTALL THE PACKAGE BY RUNNING THE FOLLWING CODE IN THE TERMINAL OR COMMAND PROMPT
+pip install pyabf
+
+#STEP2: IMPORT THE MODULE. THIS WILL GIVE YOU ACCESS TO ALL FUNCTIONS, CLASSES AND VARIABLE THAT ARE TO BE USED IN DATA ANALYSIS. (TIP:  tutorial available at :https://swharden.com/pyabf/tutorial/)
+ 
+import pyabf
+
+#STEP3: import your file. 
+# Here "fn" is just a name you give to the file you are calling (check the good practise of coding to find out why shortest possible name is prefered)
+
+fn = (r'add your path here')      # copy the absolute path of the datafile
+                                  # here the letter 'r' is used to convert the entire path as a 'raw string'. A backlash (\) in the path can be confussing in programin and to curcumnavigate this problem, the character 'r' is used in front of the path adress.
+
+abf = pyabf.ABF(fn)              # abf is used to access the whole data in the datafile above
+print(abf)                       # prints the content of the file. (Mind that this wont plot your results, to do so we can call the specific action we want to perform on the file and use another plotting library like matplotlib.pyplot to make plots)
